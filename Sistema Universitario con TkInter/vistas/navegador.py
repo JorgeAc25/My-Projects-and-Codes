@@ -19,9 +19,6 @@ class App(ttk.Frame):
         # Contenedor
         self.navegador = ttk.Notebook(self)
 
-        self.inicio = Inicio(self.miVentana)
-        self.navegador.add(self.inicio,text="Inicio")
-
         self.alumnos = Alumnos(self.miVentana)
         self.navegador.add(self.alumnos, text="Alumnos")
 
