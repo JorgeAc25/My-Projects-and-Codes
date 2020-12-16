@@ -1,0 +1,2 @@
+Este programa estaba diseñado para utilizar un decodificador ADC MCP3008 para raspberry, dado que no fue encontrado dicho componente
+opté por diseñar un decodificador desde Arduino, ambos códigos se encuentran en esta carpeta.

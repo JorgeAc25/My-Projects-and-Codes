@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/jorge/OneDrive/Escritorio/Python_1/U16 Crear sistema-Diseño Tkinter/bdd/Bdd.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1493"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="0"/><expanded_item id="2" parent="0"/><expanded_item id="3" parent="0"/><expanded_item id="4" parent="0"/><expanded_item id="5" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainCARRERAS"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">create table CARRERAS (
+	matricula_c INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	nombre_c TEXT NOT NULL,
+	duracion_c INTEGER NOT NULL
+);
+
+create table ALUMNOS (
+	matricula_a INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	nombre_a TEXT NOT NULL,
+	apellidos_a TEXT NOT NULL,
+	numero_a INTEGER,
+	carrera_a TEXT NOT NULL	
+);
+
+create table PROFESORES (
+	matricula_p INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	nombre_p TEXT NOT NULL,
+	apellidos_p TEXT NOT NULL,
+	numero_p INTEGER,
+	area_p TEXT NOT NULL
+);
+
+create table MATERIAS (
+	matricula_m INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	nombre_m TEXT NOT NULL,
+	carrera_m TEXT NOT NULL,
+	profesor_m TEXT NOT NULL
+);
+
+create table ALUMNO_PROFESOR (
+	matricula_a1 INTEGER,
+	matricula_p1 INTEGER,
+	FOREIGN KEY (matricula_a1) REFERENCES ALUMNOS (matricula_a),
+	FOREIGN KEY (matricula_p1) REFERENCES PROFESORES (matricula_p)
+);
+
+create table MATERIA_ALUMNO (
+	matricula_m1 INTEGER,
+	matricula_a2 INTEGER,
+	FOREIGN KEY (matricula_m1) REFERENCES MATERIAS (matricula_m),
+	FOREIGN KEY (matricula_a2) REFERENCES ALUMNOS (matricula_a)
+);
+
+create table MATERIA_PROFESOR (
+	matricula_m2 INTEGER,
+	matricula_p2 INTEGER,
+	FOREIGN KEY (matricula_m2) REFERENCES MATERIAS (matricula_m),
+	FOREIGN KEY (matricula_p2) REFERENCES PROFESORES (matricula_p)
+)
+
+drop table sqlite_sequence</sql><current_tab id="0"/></tab_sql></sqlb_project>
