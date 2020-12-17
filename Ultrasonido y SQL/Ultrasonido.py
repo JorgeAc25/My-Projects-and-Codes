@@ -29,7 +29,8 @@ def ObjetoR(fecha_1, distancia):
 def conexion(datos):
     conexion = sqlite3.connect('Ultrasonido.db')
     c = conexion.cursor()
-    c.executemany("insert into acciones (fecha_1,fecha_2,distancia) values(?,?,?)", datos)
+    c.executemany(
+        "insert into acciones (fecha_1,fecha_2,distancia) values(?,?,?)", datos)
     conexion.commit()
     conexion.close()
 
