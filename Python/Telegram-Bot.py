@@ -136,7 +136,7 @@ def handle(msj):
 
 
 # Numero de serie privado
-bot = telepot.Bot("*********************************")
+bot = telepot.Bot("1180603822:AAGAQPehIfTI0l7Aa7TWhDrz70RC-OGUlV0")
 bot.message_loop(handle)
 print('Are you gonna send something?')
 while True:
