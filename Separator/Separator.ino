@@ -9,13 +9,13 @@
 #define VALOR_MEDIO 14
 #define VALOR_MAXIMO 7
 
-const char* ssid = "SM-1304";
-const char* password = "Jorge123";
+const char* ssid = "**********";
+const char* password = "*******";
 
-const char* mqtt_server = "689b27671c024ebbb304b6023aaccb0a.s1.eu.hivemq.cloud";
+const char* mqtt_server = "***************************";
 const int mqtt_port = 8883;
-const char* mqtt_username = "salvador01";
-const char* mqtt_password = "Salvador01";
+const char* mqtt_username = "*******";
+const char* mqtt_password = "********";
 
 // Definición de los canales a utilizar
 const char* CONTROL_STATE_TOPIC = "control-estado";
@@ -206,7 +206,7 @@ void setup() {
     NULL,          // Parámetros de la tarea
     1,             // Prioridad de la tarea
     NULL,          // Manejador de la tarea
-    0);            // Núcleo en el que se ejecutará la tarea (El ESP32 dsolo tiene 2 nucleos)
+    0);            // Núcleo en el que se ejecutará la tarea (El ESP32 solo tiene 2 nucleos)
 }
 
 void loop() {
