@@ -1,2 +1,2 @@
-These are few codes I made in Python 3, is there anything you find useful, feel free to use it to your own.
+Hi! Welcome to my repository, here you will find some projects I made by myself and some academic-based projects too, if you find some of these codes useful, feel free to take it, my best wishes!
  
