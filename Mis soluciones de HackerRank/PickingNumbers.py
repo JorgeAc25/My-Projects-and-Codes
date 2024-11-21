@@ -3,7 +3,7 @@ Given an array of integers, find the longest subarray where the absolute differe
 
 Example a = [1, 1, 2, 2, 4, 4, 5, 5, 5]
 
-
+#NOTE: I added the print's so I could debug, here there are commented, you can always uncomment it if you find it useful to debug/understand
 
 There are two subarrays meeting the criterion: [1, 1, 2, 2] and [4, 4, 5, 5, 5]. The maximum length subarray has 5 elements.
 """
@@ -12,36 +12,36 @@ def pickingNumbers(a):
     arr_temp = []
     arr_final = []
     a.sort()
-    print(a)
+    #print(a)
 
     for i in range(1, len(a)):
-        print("valor de a[i]:", a[i], "valor de a[i-1]:", a[i-1])
+        #print("valor de a[i]:", a[i], "valor de a[i-1]:", a[i-1])
 
         # Evaluar si arr_temp esta vacio y agregar los primeros elementos consecutivos
         if (arr_temp == [] and abs(a[i] - a[i-1]) <= 1):
             arr_temp.append(a[i-1])
             arr_temp.append(a[i])
-            print(f"se agregaron {a[i-1]} y {a[i]} a arr_temp")
-            print(arr_temp)
+            #print(f"se agregaron {a[i-1]} y {a[i]} a arr_temp")
+            #print(arr_temp)
 
         # Evaluar si el siguiente elemento sigue siendo consecutivo
         elif arr_temp and abs(a[i] - min(arr_temp)) <= 1:
             arr_temp.append(a[i])
-            print(f"se agrego {a[i]} a arr_temp")
-            print(arr_temp)
+            #print(f"se agrego {a[i]} a arr_temp")
+            #print(arr_temp)
 
         else:
             # Evaluar si arr_temp es mas largo que arr_final
             if len(arr_temp) > len(arr_final):
                 arr_final = arr_temp.copy()
-                print(f"arr_final actualizado: {arr_final}")
+                #print(f"arr_final actualizado: {arr_final}")
 
             # Reiniciar arr_temp y continuar buscando
             if arr_temp:
                 min_val = min(arr_temp)
                 arr_temp = [x for x in arr_temp if x != min_val]
                 arr_temp.insert(0,a[i])
-                print(f"reiniciando arr_temp: {arr_temp}")
+                #print(f"reinicio de arr_temp: {arr_temp}")
 
     # Evaluar si el ultimo arr_temp es el mas largo
     if len(arr_temp) > len(arr_final):
@@ -52,4 +52,4 @@ def pickingNumbers(a):
 n = int(input())
 a = list(map(int, input().split()))
 
-print("El subarray mas largo es:", pickingNumbers(a))
+print("El subarray mas largo es de:", pickingNumbers(a))
